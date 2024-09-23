@@ -23,8 +23,7 @@ public class JavalinSingleton {
         app.post("/echo", ctx -> {
             
             //implement logic here
-            String jsonString = ctx.body();
-            Song song = om.readValue(jsonString, Song.class);
+            Song song = om.readValue(ctx.body().toString(), Song.class);
             ctx.json(song);
                 
         });
